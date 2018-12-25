@@ -62,7 +62,7 @@ public class TextBannerView extends RelativeLayout {
     private static final int TYPE_ITALIC = 2;
     private static final int TYPE_ITALIC_BOLD = 3;
 
-    private List<String> mDatas;
+    private List<CharSequence> mDatas;
     private ITextBannerItemClickListener mListener;
     private boolean isStarted;
     private boolean isDetachedFromWindow;
@@ -228,7 +228,7 @@ public class TextBannerView extends RelativeLayout {
 
 
     /**设置数据集合*/
-    public void setDatas(List<String> datas){
+    public void setDatas(List<CharSequence> datas){
         this.mDatas = datas;
         if (DisplayUtils.notEmpty(mDatas)){
             mViewFlipper.removeAllViews();
@@ -249,7 +249,7 @@ public class TextBannerView extends RelativeLayout {
      * @param size 图标尺寸
      * @param direction 图标位于文字方位
      */
-    public void setDatasWithDrawableIcon(List<String> datas, Drawable drawable,int size, int direction){
+    public void setDatasWithDrawableIcon(List<CharSequence> datas, Drawable drawable,int size, int direction){
         this.mDatas = datas;
         if (DisplayUtils.isEmpty(mDatas)){
             return;
